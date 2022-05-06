@@ -40,13 +40,13 @@ Answer the following<br>
 2] What is the population of cluster around m2?<br>
 3] What is updated value of m1 and m2?
 
-## 5. SDES Algorithm(I)
+## 5. Assignment on SDES Algorithm(I)
 
 Consider the 10 bit input key as: 1010000010, apply permuted choice 1, then circular
 left shift and finally permuted choice 2 and generate 8 bit round keys for TWO
 rounds
 
-## 6. SDES Algorithm(II)
+## 6. Assignment on SDES Algorithm(II)
 
 The 8 bit input plain text is: **01110010**, Put the plain text into IP-8(initial
 permutation) table, then perform Expansion and Permutation on right half. Use the
@@ -64,7 +64,7 @@ Consider the sub-key for round 0 is **Key0 = w0w1 = 0100 1010 1111 0101**. Take 
 Assignment on Diffie-Hellman key exchange Algorithm. Implement the Diffie-Hellman key exchange Algorithm to generate the Shared Secrete Key.<br>
 Assume following details.<br>
 Prime Number q=11, <br>
-Primitive root $\alpha$ =2,<br>
+Primitive root &alpha;=2,<br>
 Sender side private key XA =8,<br>
 Receiver side select private key XB =4.
 
