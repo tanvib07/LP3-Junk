@@ -64,7 +64,7 @@ Consider the sub-key for round 0 is **Key0 = w0w1 = 0100 1010 1111 0101**. Take 
 Assignment on Diffie-Hellman key exchange Algorithm. Implement the Diffie-Hellman key exchange Algorithm to generate the Shared Secrete Key.<br>
 Assume following details.<br>
 Prime Number q=11, <br>
-Primitive root $\alpha$ =2,<br>
+Primitive root  &alpha;=2,<br>
 Sender side private key XA =8,<br>
 Receiver side select private key XB =4.
 
