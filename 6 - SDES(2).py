@@ -34,12 +34,11 @@ def apply_sbox(s, data):
     return bin(s[row][col])[2:]
 
 
-def swapFunction(expansion, s0, s1, key, message):
+def function(EP, s0, s1, key, message):
     P4table = [2, 4, 3, 1]
     left = message[:4]
     right = message[4:]
-    temp = PC(right, expansion)
-    # print(f"{temp[:4]} {temp[4:]}")
+    temp = PC(right, EP)
     temp = XOR(temp, key)
     l = apply_sbox(s0, temp[:4])
     r = apply_sbox(s1, temp[4:])
@@ -57,14 +56,24 @@ if __name__ == '__main__':
     plainText = "01110010"
     K1 = "10100100"
     K2 = "01000011"
-    expansion = [4, 1, 2, 3, 2, 3, 4, 1]
+    EP = [4, 1, 2, 3, 2, 3, 4, 1]
     s0Box = [[1, 0, 3, 2], [3, 2, 1, 0], [0, 2, 1, 3], [3, 1, 3, 2]]
     s1Box = [[0, 1, 2, 3], [2, 0, 1, 3], [3, 0, 1, 0], [2, 1, 0, 3]]
 
     temp = PC(plainText, IP)
-    # print(f"{temp[:4]} {temp[4:]}")
-    temp = swapFunction(expansion, s0Box, s1Box, K1, temp)
+    print(f"After IP: {temp[:4]} {temp[4:]}\n")
+    temp = function(EP, s0Box, s1Box, K1, temp)
+    print(f"After first Function: {temp[:4]} {temp[4:]}\n")
     temp = temp[4:] + temp[:4]
-    temp = swapFunction(expansion, s0Box, s1Box, K2, temp)
-    CT = PC(temp, IP_inv)
-    print("Cipher text is:", CT)
+    temp = function(EP, s0Box, s1Box, K2, temp)
+    print(f"After Second Function: {temp[:4]} {temp[4:]}\n")
+    cipherText = PC(temp, IP_inv)
+    print(f"Cipher text is: {cipherText[:4]} {cipherText[4:]}")
+
+
+"""
+
+Online Calculator
+https://fauzanakmalh1.github.io/Simplified-DES-Calculator/
+
+"""

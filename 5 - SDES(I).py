@@ -38,11 +38,11 @@ if __name__ == '__main__':
     right = leftShift(rightHalf, 1)
     print(f"Key after left shift(1 bit): {left} {right}")
     SubKey1 = PC(left+right, P8table)
-    print(f"First Subkey: {SubKey1}")
+    print(f"First Subkey: {SubKey1[:4]} {SubKey1[4:]}")
 
     print(f"\n*****PC2*****")
     left = leftShift(left, 2)
     right = leftShift(right, 2)
     print(f"Key after left shift(2 bits): {left} {right}")
     SubKey2 = PC(left + right, P8table)
-    print(f"Second Subkey: {SubKey2}")
+    print(f"Second Subkey: {SubKey2[:4]} {SubKey2[4:]}")
